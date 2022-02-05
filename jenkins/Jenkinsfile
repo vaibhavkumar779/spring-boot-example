@@ -21,6 +21,11 @@ pipeline {
             }
         }
         stage('Deliver') {
+            when {
+                expression {
+                    BRANCH_NAME 'prod'
+                }
+            }
             steps {
                 sh 'chmod +x ./jenkins/scripts/deliver.sh'
                 sh './jenkins/scripts/deliver.sh'
