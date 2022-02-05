@@ -1,4 +1,4 @@
-package com.mycompany.app;
+package com.hello.hello;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 /**
  * Unit test for simple App.
  */
-public class AppTest
+public class HelloControllerTest 
 {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
