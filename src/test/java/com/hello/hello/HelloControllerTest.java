@@ -1,5 +1,3 @@
-
-  
 package com.hello.hello;
 
 import static org.hamcrest.Matchers.equalTo;

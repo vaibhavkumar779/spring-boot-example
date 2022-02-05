@@ -1,21 +1,12 @@
 package com.hello.hello;
 
-/**
- * Hello world!
- */
-public class App
-{
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-    private final String message = "Hello World!";
+@SpringBootApplication
+public class HelloApplication {
 
-    public App() {}
-
-    public static void main(String[] args) {
-        System.out.println(new App().getMessage());
-    }
-
-    private final String getMessage() {
-        return message;
-    }
-
+	public static void main(String[] args) {
+		SpringApplication.run(HelloApplication.class, args);
+	}
 }
