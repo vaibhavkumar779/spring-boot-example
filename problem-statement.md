@@ -10,3 +10,5 @@ Madhukaraphatak is a java developer developed some code which is running fine on
 4. Email notification will be generated too saying the status of the job is it successfully completed or not. (Hint: Configure Email Notification plugin)
 5. Pipeline should trigger with commits in github repo by using webhook trigger.
 6. Do follow all the best practice and convention at every steps/stages (i.e. Git, maven, CI-CD, plugins etc).
+
+
