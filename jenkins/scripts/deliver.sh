@@ -20,3 +20,4 @@ set -x
 VERSION=`mvn help:evaluate -Dexpression=project.version | grep "^[^\[]"`
 set +x
 echo $VERSION
+// mvn fabric8:deploy
