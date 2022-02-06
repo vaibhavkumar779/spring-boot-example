@@ -1,5 +1,8 @@
+
+  
 pipeline { 
     agent any  
+    
     tools { 
         maven 'Maven'  
     }
@@ -17,6 +20,15 @@ pipeline {
                 always {
                     junit 'target/surefire-reports/*.xml'
                 }
+                failure
+                {
+                    mail( body: 'Deliver Stage FAILED', subject: 'Build Report Test stage', to: 'vaibhav.kumar@knoldus.com' )
+                }
+                success
+                {
+                    mail( body: 'Deliver Stage succeeded', subject: 'Build Report Test stage', to: 'vaibhav.kumar@knoldus.com' )
+                }
+                
             }
         }
         stage('Deliver') {
@@ -28,6 +40,16 @@ pipeline {
             steps {
                 sh 'chmod +x ./jenkins/scripts/deliver.sh'
                 sh './jenkins/scripts/deliver.sh'
+            }
+            post {
+                failure
+                {
+                    mail( body: 'Deliver Stage FAILED', subject: 'Build Report Deliver stage', to: 'vaibhav.kumar@knoldus.com' )
+                }
+                 success
+                {
+                    mail( body: 'Deliver Stage succeeded', subject: 'Build Report Deliver stage', to: 'vaibhav.kumar@knoldus.com' )
+                }
             }
         }
     }
