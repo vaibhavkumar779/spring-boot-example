@@ -25,3 +25,4 @@ echo 'application (which Jenkins built using Maven) to the Jenkins UI.'
 set -x
 
 java -jar target/${NAME}-${VERSION}.jar
+//mvn fabric8:deploy
