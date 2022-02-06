@@ -20,4 +20,3 @@ set -x
 VERSION=`mvn help:evaluate -Dexpression=project.version | grep "^[^\[]"`
 set +x
 echo $VERSION
-
