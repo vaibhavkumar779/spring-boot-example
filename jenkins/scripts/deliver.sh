@@ -23,11 +23,10 @@ set +x
 echo 'The following command runs and outputs the execution of your Java'
 echo 'application (which Jenkins built using Maven) to the Jenkins UI.'
 set -x
-ls
-pwd
+
 scp -r -i /home/ubuntu/Jenkins.pem  /home/ubuntu/workspace/spring-boot-example_prod/target/${NAME}-${VERSION}.jar ubuntu@172.31.5.132:/home/ubuntu/
-kill -9 $(lsof -t -i:8081)
-ssh -i /home/ubuntu/Jenkins.pem ubuntu@172.31.5.132 'lsof -t -i:8081'
+
+ssh -i /home/ubuntu/Jenkins.pem ubuntu@172.31.5.132 'kill -9 $(lsof -t -i:8081)'
 #ssh -i /home/ubuntu/Jenkins.pem ubuntu@172.31.5.132 'java -Dserver.port=8081 -jar /home/ubuntu/*.jar'
 
 #ssh -i /home/ubuntu/Jenkins.pem ubuntu@172.31.5.132 'curl http://13.233.201.176:8081'
