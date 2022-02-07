@@ -20,11 +20,11 @@ pipeline {
            
                 failure
                 {
-                    mail( body: 'Test Stage FAILED', subject: 'Build Report Test stage', to: 'vaibhav.kumar@knoldus.com' )
+                    mail( body: 'Test Stage FAILED', subject: 'Production branch Build Report Test stage', to: 'vaibhav.kumar@knoldus.com' )
                 }
                 success
                 {
-                    mail( body: 'Test Stage succeeded', subject: 'Build Report Test stage', to: 'vaibhav.kumar@knoldus.com' )
+                    mail( body: 'Test Stage succeeded', subject: 'Production branch Build Report Test stage', to: 'vaibhav.kumar@knoldus.com' )
                 }
                 
             }
@@ -43,11 +43,11 @@ pipeline {
             post {
                 failure
                 {
-                    mail( body: 'Deliver Stage FAILED', subject: 'Build Report Deliver stage', to: 'vaibhav.kumar@knoldus.com' )
+                    mail( body: 'Deliver Stage FAILED', subject: 'Production branch  Build Report Deliver stage', to: 'vaibhav.kumar@knoldus.com' )
                 }
                  success
                 {
-                    mail( body: 'Deliver Stage succeeded', subject: 'Build Report Deliver stage', to: 'vaibhav.kumar@knoldus.com' )
+                    mail( body: 'Deliver Stage succeeded', subject: 'Production branch  Build Report Deliver stage', to: 'vaibhav.kumar@knoldus.com' )
                 }
             }
         }
