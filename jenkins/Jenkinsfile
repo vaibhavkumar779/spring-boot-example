@@ -15,16 +15,14 @@ pipeline {
                 sh 'mvn test'
             }
             post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
+           
                 failure
                 {
-                    mail( body: 'Deliver Stage FAILED', subject: 'Build Report Test stage', to: 'vaibhav.kumar@knoldus.com' )
+                    mail( body: 'Test Stage FAILED', subject: 'Build Report Test stage', to: 'vaibhav.kumar@knoldus.com' )
                 }
                 success
                 {
-                    mail( body: 'Deliver Stage succeeded', subject: 'Build Report Test stage', to: 'vaibhav.kumar@knoldus.com' )
+                    mail( body: 'Test Stage succeeded', subject: 'Build Report Test stage', to: 'vaibhav.kumar@knoldus.com' )
                 }
                 
             }
