@@ -23,7 +23,7 @@ set +x
 echo 'The following command runs and outputs the execution of your Java'
 echo 'application (which Jenkins built using Maven) to the Jenkins UI.'
 set -x
-
+ssh -i /home/ubuntu/Jenkins.pem ubuntu@172.31.5.132 'sudo systemctl stop HelloJava'
 scp -r -i /home/ubuntu/Jenkins.pem  /home/ubuntu/workspace/spring-boot-example_prod/target/${NAME}-${VERSION}.jar ubuntu@172.31.5.132:/home/ubuntu/
 ssh -i /home/ubuntu/Jenkins.pem ubuntu@172.31.5.132 'sudo systemctl start HelloJava'
 #ssh -i /home/ubuntu/Jenkins.pem ubuntu@172.31.5.132 '/usr/local/bin/hello.sh start'
