@@ -37,6 +37,7 @@ pipeline {
             }
             steps {
                 sh 'chmod +x ./jenkins/scripts/deliver.sh'
+                sh 'mvn package'
                 sh './jenkins/scripts/deliver.sh'
             }
             post {
