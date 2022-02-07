@@ -25,6 +25,6 @@ echo 'application (which Jenkins built using Maven) to the Jenkins UI.'
 set -x
 ls
 pwd
-#scp -i /home/ubuntu/Jenkins.pem  /home/ubuntu/Jenkins.pem ubuntu@172.31.5.132:/home/ubuntu/
+scp -i /home/ubuntu/Jenkins.pem  /home/ubuntu/workspace/spring-boot-example_prod/${NAME}-${VERSION}.jar ubuntu@172.31.5.132:/home/ubuntu/
 
 #java -Dserver.port=8081 -jar target/${NAME}-${VERSION}.jar
