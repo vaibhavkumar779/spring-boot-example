@@ -25,8 +25,8 @@ echo 'application (which Jenkins built using Maven) to the Jenkins UI.'
 set -x
 
 scp -r -i /home/ubuntu/Jenkins.pem  /home/ubuntu/workspace/spring-boot-example_prod/target/${NAME}-${VERSION}.jar ubuntu@172.31.5.132:/home/ubuntu/
-
-ssh -i /home/ubuntu/Jenkins.pem ubuntu@172.31.5.132 'kill -9 $(lsof -t -i:8081)'
+ssh -i /home/ubuntu/Jenkins.pem ubuntu@172.31.5.132 '/usr/local/bin/hello.sh start'
+#ssh -i /home/ubuntu/Jenkins.pem ubuntu@172.31.5.132 'kill -9 $(lsof -t -i:8081)'
 #ssh -i /home/ubuntu/Jenkins.pem ubuntu@172.31.5.132 'java -Dserver.port=8081 -jar /home/ubuntu/*.jar &'
 
 #ssh -i /home/ubuntu/Jenkins.pem ubuntu@172.31.5.132 'curl http://13.233.201.176:8081'
