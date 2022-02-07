@@ -23,6 +23,8 @@ set +x
 echo 'The following command runs and outputs the execution of your Java'
 echo 'application (which Jenkins built using Maven) to the Jenkins UI.'
 set -x
-scp -i Jenkins.pem  /home/ubuntu/Jenkins.pem ubuntu@172.31.5.132:/home/ubuntu/
+ls
+pwd
+#scp -i /home/ubuntu/Jenkins.pem  /home/ubuntu/Jenkins.pem ubuntu@172.31.5.132:/home/ubuntu/
 
 #java -Dserver.port=8081 -jar target/${NAME}-${VERSION}.jar
